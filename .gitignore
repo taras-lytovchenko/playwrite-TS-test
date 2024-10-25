@@ -132,3 +132,4 @@ dist
 
 # Stores Idea versions used for testing Idea extensions
 .idea/
+.idea
