@@ -19,7 +19,7 @@ export default defineConfig({
   /* Shared settings for all the projects below. See https://playwright.dev/docs/api/class-testoptions. */
   use: {
     baseURL: env.TALISA_US_URL,
-    headless: process.env.CI ? false : false,
+    headless: process.env.CI ? true : false,
   },
 
   globalSetup: require.resolve('./globalSetup.ts'),
