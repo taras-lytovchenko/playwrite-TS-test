@@ -1,10 +1,11 @@
 import {AppComponent} from "../../appComponent";
 import {CustomerData} from "../utils/customerData";
+import {env} from "../../../env";
 
 export class Address extends AppComponent {
 
     static getCheckoutValues(): { [key: string]: string } {
-        const customerEmail = CustomerData.generateEmail(process.env.EMAIL);
+        const customerEmail = CustomerData.generateEmail(env.EMAIL);
         return {
             email: customerEmail,
             firstname: "Seimur",
