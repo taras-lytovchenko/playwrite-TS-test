@@ -1,10 +1,17 @@
 import {AppComponent} from "./appComponent";
 import {HomePage} from "./pages/home_page/home.page";
-import {UstomOptions} from "./pages/product_page/сustom.options";
+
 import {ProductPage} from "./pages/product_page/product.page";
+import {CartInformation} from "./pages/cart_page/cart.page";
+import {CheckoutPage} from "./pages/checkout_page/checkout.page";
+import {ThankYouPage} from "./pages/thank_you_page/thank.you.page";
+
 
 export class Application extends AppComponent {
-    home = new HomePage(this.page);
-    customOptions = new UstomOptions(this.page);
+    homePage = new HomePage(this.page);
     productPage = new ProductPage(this.page);
+    cartPage = new CartInformation(this.page);
+    checkoutPage = new CheckoutPage(this.page);
+    thankYouPage = new ThankYouPage(this.page);
+
 }

@@ -6,7 +6,7 @@ enum FieldType {
     NONE_FIELD = 'NONE_FIELD',
 }
 
-export class UstomOptions extends AppComponent {
+export class CustomOptions extends AppComponent {
 
     async chooseCustomOption() {
         const customOptionList = await this.getAllCustomOptions();
