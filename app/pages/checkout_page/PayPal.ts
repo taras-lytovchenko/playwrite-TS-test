@@ -43,6 +43,10 @@ export class Paypal extends AppComponent {
         await paypalPage.selectOption("//select[@data-testid='address-form-field-state']", checkoutValues.state);
         await paypalPage.fill("//input[@data-testid='address-form-field-postalCode']", checkoutValues.zip);
     }
+    async finalizePayPalExpressOrder() {
+        await this.page.waitForTimeout(8000);
+        await this.page.locator("//button[@class='action checkout primary']").click();
+    }
 
     // Place order via Paypal on checkout page
     async authorizeToCheckoutPaypal() {
@@ -61,11 +65,6 @@ export class Paypal extends AppComponent {
 
         await this.loginToPaypal(paypalPage);
         await paypalPage.locator("//button[@id='payment-submit-btn']").click();
-    }
-
-    async finalizePayPalExpressOrder() {
-        await this.page.waitForTimeout(8000);
-        await this.page.locator("//button[@class='action checkout primary']").click();
     }
 
     private async loginToPaypal(page: any) {
